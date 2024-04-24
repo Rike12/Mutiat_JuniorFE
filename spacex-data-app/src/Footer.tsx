@@ -1,8 +1,7 @@
 import React from 'react';
-import Twitter from './assets/twitter.svg';
-import Facebook from './assets/facebook.svg';
-import Github from './assets/github.svg';
-import LinkedIn from './assets/linkedin.svg'
+import Twitter from './assets/twitter.png';
+import Github from './assets/github.jpg';
+import LinkedIn from './assets/linkedin.png'
 
 const Footer = () => {
   return (
@@ -13,16 +12,14 @@ const Footer = () => {
           <div className="ml-4 flex space-x-4">
             {/* Social media icons */}
             <a href="#" target="_blank" rel="noopener noreferrer">
-            <img src={Github} alt="Logo"className="w-6 h-10"/>
+            <img src={Github} alt="Logo"className="w-6  hover:bg-blue-600"/>
             </a>
             <a href="#" target="_blank" rel="noopener noreferrer">
-            <img src={Twitter} alt="Logo"className=" w-6 h-10"/>
+            <img src={Twitter} alt="Logo"className=" w-6 hover:bg-blue-600"/>
             </a>
+            
             <a href="#" target="_blank" rel="noopener noreferrer">
-            <img src={Facebook} alt="Logo"className="w-6 h-10"/>
-            </a>
-            <a href="#" target="_blank" rel="noopener noreferrer">
-            <img src={LinkedIn} alt="Logo"className="w-6 h-10"/>
+            <img src={LinkedIn} alt="Logo"className="w-6 "/>
             </a>
             
           </div>

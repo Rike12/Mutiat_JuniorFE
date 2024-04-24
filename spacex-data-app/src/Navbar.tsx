@@ -1,11 +1,20 @@
 import React, { useState } from 'react';
-import Logo from './assets/logo.png'
+import { Link, Routes, Route } from "react-router-dom";
+import logo from './assets/logo.png';
+import google from './assets/google.png';
+import hide from './assets/hide.png';
+import SignIn from './Signin';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isSignInVisible, setIsSignInVisible] = useState(false); // State to manage visibility of sign-in form
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const toggleSignInForm = () => {
+    setIsSignInVisible(!isSignInVisible);
   };
 
   return (
@@ -13,7 +22,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
-          <img src={Logo} alt="Logo"className="object-cover object-center w-60 h-10" />
+            <img src={logo} alt="Logo" className="object-cover object-center w-60 h-10" />
           </div>
 
           {/* Hamburger Menu */}
@@ -61,7 +70,9 @@ const Navbar = () => {
 
           {/* Sign In Button */}
           <div className="hidden md:block">
-            <a href="#" className="text-white hover:bg-gray-800 px-3 py-2 rounded-md text-sm font-medium">Sign In</a>
+            <a href="#" className="text-white hover:bg-gray-800 px-3 py-2 rounded-md text-sm font-medium" onClick={toggleSignInForm}>
+              Sign in
+            </a>
           </div>
         </div>
       </div>
@@ -73,9 +84,16 @@ const Navbar = () => {
             <a href="#" className="text-white block hover:bg-gray-800 px-3 py-2 rounded-md text-base font-medium">Home</a>
             <a href="#" className="text-white block hover:bg-gray-800 px-3 py-2 rounded-md text-base font-medium">About</a>
             <a href="#" className="text-white block hover:bg-gray-800 px-3 py-2 rounded-md text-base font-medium">Contact</a>
-            <a href="#" className="text-white block hover:bg-gray-800 px-3 py-2 rounded-md text-base font-medium">Sign In</a>
+            <Link to='/signin' className="text-white block hover:bg-gray-800 px-3 py-2 rounded-md text-base font-medium">Sign In</Link>
           </div>
         </div>
+      )}
+
+      {/* Routes for SignIn */}
+      {isSignInVisible && (
+        <Routes>
+          <Route path="/signin" element={<SignIn />} />
+        </Routes>
       )}
     </nav>
   );
