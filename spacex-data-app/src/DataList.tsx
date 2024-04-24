@@ -1,35 +1,66 @@
-// DataGrid.tsx
-import React, { useState } from 'react';
-import { DataItem } from './Types'; // Define your ItemType interface
+import React, { useState, useEffect } from "react";
+import SearchForm from "./search/SearchForm";
 
-const DataGrid: React.FC<{ items: DataItem[] }> = ({ items }) => {
-  const [selectedItem, setSelectedItem] = useState<DataItem | null>(null);
+interface Item {
+  capsule_id: string;
+  capsule_serial: string;
+  details: string;
+  status: string;
+  type: string;
+  original_launch: string;
+}
 
-  const handleClick = (item: DataItem) => {
-    setSelectedItem(item);
+interface GridListProps {
+  items: Item[];
+}
+
+const GridList: React.FC<GridListProps> = ({ items }) => {
+  const [filteredItems, setFilteredItems] = useState<Item[]>([]);
+  const [searchTerm, setSearchTerm] = useState<string>("");
+
+  useEffect(() => {
+    setFilteredItems(items);
+  }, [items]);
+
+  useEffect(() => {
+    const filtered = items.filter((item) =>
+      item.status.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setFilteredItems(filtered);
+  }, [items, searchTerm]);
+
+  const handleSearch = (query: { status: string; originalLaunch: string; type: string }) => {
+    const { status, originalLaunch, type } = query;
+    
+    
+    const filtered = items.filter((item) =>
+      item.status?.toLowerCase().includes(status.toLowerCase()) &&
+      item.original_launch?.toLowerCase().includes(originalLaunch.toLowerCase()) &&
+      item.type?.toLowerCase().includes(type.toLowerCase())
+    );
+  
+    setFilteredItems(filtered);
   };
+  
 
   return (
-    <div className="grid grid-cols gap-4">
-      {items.map((item) => (
-        <div key={item.id} className="p-4 border cursor-pointer" onClick={() => handleClick(item)}>
-          <p>{item.name}</p>
-          <p>{item.description}</p>
-         
-        </div>
-      ))}
-      {selectedItem && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-around items-center">
-          <div className="bg-white p-8">
-            <p>{selectedItem.name}</p>
-            <p>{selectedItem.description}</p>
-
-            <button onClick={() => setSelectedItem(null)}>Close</button>
+    <div>
+      <SearchForm onSearch={handleSearch} />
+      <div className="grid grid-cols-3 gap-4 p-6 ">
+       {filteredItems.map((item) => (
+          <div
+            key={item.capsule_id}
+            className="border border-gray-300 rounded-md p-4 bg-gray-200"
+          >
+            <h2 className="text-xl font-semibold">{item.details}</h2>
+            <p>Status: {item.status}</p>
+            <p>Type: {item.type}</p>
+            <p>Original Launch: {new Date(item.original_launch).toLocaleString()}</p>
           </div>
-        </div>
-      )}
+        ))}
+      </div>
     </div>
   );
 };
 
-export default DataGrid;
+export default GridList;

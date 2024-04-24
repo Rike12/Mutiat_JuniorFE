@@ -10,7 +10,7 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSearch }) => {
   const [type, setType] = useState('');
 
   const handleSearch = () => {
-    // Construct the search query based on selected filters
+    
     const query = {
       status: status,
       originalLaunch: originalLaunch,

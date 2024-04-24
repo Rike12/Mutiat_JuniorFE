@@ -3,16 +3,15 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import axios from 'axios';
 import Navbar from './Navbar';
 import Banner from './Banner';
-import SearchForm from './SearchForm';
 import Footer from './Footer';
 import DataGrid from './DataList';
-import { DataItem } from './Types';
+import { DataItem } from './Types'; 
 
 const App = () => {
   const [data, setData] = useState<DataItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [selectedItem, setSelectedItem] = useState<DataItem | null>(null);
+  const [selectedItem, setSelectedItem] = useState<DataItem | null>(null); // Annotate selectedItem as DataItem | null
 
   useEffect(() => {
     fetchData();
@@ -30,20 +29,6 @@ const App = () => {
     }
   };
 
-  const handleSearch = (filters: any) => {
-    // Filter the data based on the provided filters
-    const filteredData = data.filter((item) => {
-      // Check if each item matches the filter criteria
-      const statusMatch = !filters.status || item.status === filters.status;
-      const originalLaunchMatch = !filters.originalLaunch || item.originalLaunch === filters.originalLaunch;
-      const typeMatch = !filters.type || item.type === filters.type;
-      return statusMatch && originalLaunchMatch && typeMatch;
-    });
-
-    // Update the data state with the filtered data
-    setData(filteredData);
-  };
-
   const handleItemClick = (item: DataItem) => {
     setSelectedItem(item);
   };
@@ -53,7 +38,6 @@ const App = () => {
       <div>
         <Navbar />
         <Banner />
-        <SearchForm onSearch={handleSearch} />
         <DataGrid items={data} />
         <Footer />
       </div>
