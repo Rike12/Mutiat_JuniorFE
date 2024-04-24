@@ -53,9 +53,9 @@ const Navbar = () => {
           {/* Navigation Menu */}
           <div className="hidden md:block">
             <div className="flex items-center">
-              <a href="#" className="text-white hover:bg-gray-800 px-3 py-2 rounded-md text-sm font-medium">Home</a>
-              <a href="#" className="text-white hover:bg-gray-800 px-3 py-2 rounded-md text-sm font-medium">About</a>
-              <a href="#" className="text-white hover:bg-gray-800 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+              <a href="#" className="text-white hover:bg-gray-800 px-3 py-2 rounded-md text-sm font-medium">Mission</a>
+              <a href="#" className="text-white hover:bg-gray-800 px-3 py-2 rounded-md text-sm font-medium">Launches</a>
+              <a href="#" className="text-white hover:bg-gray-800 px-3 py-2 rounded-md text-sm font-medium">Careers</a>
             </div>
           </div>
 
