@@ -23,7 +23,7 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSearch }) => {
 
   return (
     <div className="bg-gray-200 p-4">
-      <h2 className="text-xl font-semibold mb-4">Search Rockets</h2>
+      <h2 className="text-xl font-semibold mb-4">Search Capsules</h2>
       <div className="flex flex-wrap gap-4">
         {/* Status Filter */}
         <div>

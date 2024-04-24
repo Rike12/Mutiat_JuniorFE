@@ -2,9 +2,10 @@ import React from 'react';
 import rocketImage from './assets/rocket.png';
 
 
+
 const Banner = () => {
   return (
-    <div className="bg-gray-900 text-white py-20  bg-[url('./assets/poster.jpg')]  bg-center h-screen">
+    <div className="bg-gray-900 text-white py-20  banner  bg-center h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-center">
         
         {/* Text Content */}

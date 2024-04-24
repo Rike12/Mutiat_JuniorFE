@@ -70,9 +70,9 @@ const Navbar = () => {
 
           {/* Sign In Button */}
           <div className="hidden md:block">
-            <a href="#" className="text-white hover:bg-gray-800 px-3 py-2 rounded-md text-sm font-medium" onClick={toggleSignInForm}>
-              Sign in
-            </a>
+
+            <Link to='/signin' className="text-white block hover:bg-gray-800 px-3 py-2 rounded-md text-base font-medium" onClick={toggleSignInForm}>Sign In</Link>
+         
           </div>
         </div>
       </div>
@@ -92,7 +92,7 @@ const Navbar = () => {
       {/* Routes for SignIn */}
       {isSignInVisible && (
         <Routes>
-          <Route path="/signin" element={<SignIn />} />
+          <Route path="./Signin" element={<SignIn />} />
         </Routes>
       )}
     </nav>
