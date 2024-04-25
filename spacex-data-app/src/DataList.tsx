@@ -13,7 +13,7 @@ interface Item {
 interface GridListProps {
   items: Item[];
 }
-
+const ITEMS_PER_PAGE = 10;
 const GridList: React.FC<GridListProps> = ({ items }) => {
   const [filteredItems, setFilteredItems] = useState<Item[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>("");
