@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link, Routes, Route } from "react-router-dom";
 import logo from './assets/logo.png';
-import google from './assets/google.png';
 import hide from './assets/hide.png';
 import SignIn from './Signin';
 
