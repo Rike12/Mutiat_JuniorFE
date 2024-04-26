@@ -49,13 +49,13 @@ const GridList: React.FC<GridListProps> = ({ items, onItemClick }) => {
   };
 
   return (
-    <div>
+    <div className="mx-auto px-4 sm:px-6 lg:px-8">
       <SearchForm onSearch={handleSearch} />
-      <div className="grid grid-cols-3 gap-4 p-6 ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-6 ">
        {filteredItems.map((item) => (
           <div
             key={item.capsule_id}
-            className="border border-gray-300 rounded-md p-4 bg-gray-200" onClick={() => onItemClick(item)}
+            className="border border-gray-300 rounded-md p-4 bg-gray-200 cursor-pointer" onClick={() => onItemClick(item)}
           >
             <h2 className="text-xl font-semibold">{item.details}</h2>
             <p>Status: {item.status}</p>
@@ -64,10 +64,10 @@ const GridList: React.FC<GridListProps> = ({ items, onItemClick }) => {
           </div>
         ))}
       </div>
-      <div className="flex justify-between px-6 mb-5">
-        <button  className="bg-gray-400  hover:bg-gray-600 text-white font-semibold mt-7 py-2 px-6 rounded-md" onClick={prevPage} disabled={currentPage === 1}>Previous</button>
+      <div className="flex flex-col items-center sm:flex-row sm:justify-between px-6 mb-5">
+        <button  className="bg-gray-400  hover:bg-gray-600 text-white font-semibold mt-7 py-2 px-6 rounded-mdbg-gray-400 hover:bg-gray-600 text-white font-semibold mt-2 sm:mt-7 py-2 px-6 sm:mr-2 rounded-md" onClick={prevPage} disabled={currentPage === 1}>Previous</button>
         <span>{`Page ${currentPage} of ${totalPages}`}</span>
-        <button  className="bg-gray-400  hover:bg-gray-600 text-white font-semibold mt-7 py-2 px-6 rounded-md" onClick={nextPage} disabled={currentPage === totalPages}>Next</button>
+        <button  className="bg-gray-400 hover:bg-gray-600 text-white font-semibold mt-2 sm:mt-7 py-2 px-6 sm:ml-2 rounded-md" onClick={nextPage} disabled={currentPage === totalPages}>Next</button>
       </div>
     </div>
   );

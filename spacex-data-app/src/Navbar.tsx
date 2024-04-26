@@ -59,7 +59,7 @@ const Navbar = () => {
             </button>
           </div>
 
-          {/* Navigation Menu */}
+        
           <div className="hidden md:block">
             <div className="flex items-center">
               <a href="#" className="text-white hover:bg-gray-800 px-3 py-2 rounded-md text-sm font-medium">Mission</a>
@@ -68,7 +68,7 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Sign In Button */}
+          
           <div className="hidden md:block">
 
             <Link to='/signin' className="text-white block hover:bg-gray-800 px-3 py-2 rounded-md text-base font-medium" onClick={toggleSignInForm}>Sign In</Link>
@@ -77,7 +77,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+     
       {isOpen && (
         <div className="md:hidden" id="mobile-menu">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
@@ -89,10 +89,10 @@ const Navbar = () => {
         </div>
       )}
 
-      {/* Routes for SignIn */}
+    
       {isSignInVisible && (
         <Routes>
-          <Route path="./Signin" element={<SignIn />} />
+          <Route path="./signin" element={<SignIn />} />
         </Routes>
       )}
     </nav>
