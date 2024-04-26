@@ -9,14 +9,14 @@ This React application allows users to explore data about SpaceX rockets or caps
 - [Assignment](#assignment)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
--
-- [LiVE Project URL](#PROJECTURL)
+- [ Video URL](#videourl)
+- [LiVE Project URL](#projecturl)
 
 ## About
 
 SpaceX, founded by Elon Musk, is a pioneering aerospace manufacturer and space transport company. They provide open access to their data through the SpaceX API, which this application utilizes.
 
-## Assignment
+## Asssessment
 
 This project is a technical assignment for a Junior Frontend Engineer position. It involves building a React app to share SpaceX data with the world. The assignment requirements include:
 
@@ -43,6 +43,9 @@ This project is a technical assignment for a Junior Frontend Engineer position. 
 - TypeScript
 - Tailwind CSS
 
+## Video Demo
+
+[Watch a video demo of the app](https://www.youtube.com/watch?v=your-video-id)
 
 ## Live Project URL
 
