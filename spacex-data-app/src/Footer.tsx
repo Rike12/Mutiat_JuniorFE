@@ -26,11 +26,11 @@ const Footer = () => {
         </div>
         <div>
        
-          <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md">
+          <button className="bg-gray-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md">
           <a href="#" className=" hover:underline">New Launch Updates</a>
           </button>
         </div>
-        <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md">
+        <button className="bg-gray-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md">
           <a href="#">Contact Us</a>
         </button>
       </div>

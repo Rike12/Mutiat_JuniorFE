@@ -11,7 +11,7 @@ const App = () => {
   const [data, setData] = useState<DataItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [selectedItem, setSelectedItem] = useState<DataItem | null>(null); // Annotate selectedItem as DataItem | null
+  const [selectedItem, setSelectedItem] = useState<DataItem | null>(null);
 
   useEffect(() => {
     fetchData();
@@ -38,7 +38,7 @@ const App = () => {
       <div>
         <Navbar />
         <Banner />
-        <DataGrid items={data} />
+        <DataGrid items={data} onItemClick={handleItemClick} />
         <Footer />
       </div>
     </Router>

@@ -2,8 +2,17 @@ import React, { useState } from 'react';
 
 interface SearchFormProps {
   onSearch?: (query: { status: string; originalLaunch: string; type: string }) => void;
+  onItemClick?: (item: Item) => void;
 }
 
+interface Item {
+  capsule_id: string;
+  capsule_serial: string;
+  details: string;
+  status: string;
+  type: string;
+  original_launch: string;
+}
 const SearchForm: React.FC<SearchFormProps> = ({ onSearch }) => {
   const [status, setStatus] = useState('');
   const [originalLaunch, setOriginalLaunch] = useState('');
@@ -16,8 +25,6 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSearch }) => {
       originalLaunch: originalLaunch,
       type: type
     };
-
-    // Pass the query to the parent component for processing
     onSearch && onSearch(query);
   };
 
@@ -64,7 +71,7 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSearch }) => {
         {/* Search Button */}
         <div >
           <button
-            className="bg-blue-500  hover:bg-blue-600 text-white font-semibold mt-7 py-2 px-6 rounded-md"
+            className="bg-gray-500  hover:bg-gray-600 text-white font-semibold mt-7 py-2 px-6 rounded-md"
             onClick={handleSearch}
           >
             Search
