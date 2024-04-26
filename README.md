@@ -1,5 +1,5 @@
 # Mutiat_JuniorFE
- # SpaceX Data Sharing App
+
 
 This React application allows users to explore data about SpaceX rockets or capsules. It fetches data from the SpaceX API and displays it in an elegant and user-friendly interface.
 
@@ -9,10 +9,8 @@ This React application allows users to explore data about SpaceX rockets or caps
 - [Assignment](#assignment)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+-
+- [LiVE Project URL](#PROJECTURL)
 
 ## About
 
@@ -45,9 +43,8 @@ This project is a technical assignment for a Junior Frontend Engineer position. 
 - TypeScript
 - Tailwind CSS
 
-## Installation
 
-1. Clone the repository.
-   ```bash
-   git clone https://github.com/Rike12/Muiat_JuniorFE
+## Live Project URL
+
+[Click here to see the live](https://mutiat-junior-fe.vercel.app/)
 
