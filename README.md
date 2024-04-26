@@ -45,7 +45,7 @@ This project is a technical assignment for a Junior Frontend Engineer position. 
 
 ## Video Demo
 
-[Watch a video demo of the app](https://www.youtube.com/watch?v=your-video-id)
+[Watch a video demo of the app](https://www.loom.com/share/5c5c9e946d22497389baf503d7bc9b70?sid=12150913-792d-47f6-86b3-b4a15be2f272)
 
 ## Live Project URL
 
